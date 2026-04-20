@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { MapPin, Mail, Phone, Award, GraduationCap, Briefcase, Code, Wrench, Database, Brain } from "lucide-react"
+import { MapPin, Mail, Phone, Award, GraduationCap, Briefcase, Building2, Code, Wrench, Database, Brain } from "lucide-react"
 import { Card } from "@/components/ui/card"
 
 const stats = [
