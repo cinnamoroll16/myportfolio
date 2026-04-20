@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { MapPin, Mail, Phone, Award, GraduationCap, Briefcase } from "lucide-react"
+import { MapPin, Mail, Phone, Award, GraduationCap, Briefcase, Code, Wrench, Database, Brain } from "lucide-react"
 import { Card } from "@/components/ui/card"
 
 const stats = [
@@ -12,15 +12,27 @@ const stats = [
   { icon: Award, label: "Achievement", value: "Dean's Lister", sublabel: "1st-2nd Year" },
 ]
 
-const highlights = [
-  "React.js & JavaScript",
-  "UX/UI Design & Figma",
-  "Mobile Development",
-  "IoT Systems",
-  "REST APIs",
-  "Cloud (Azure/Firebase)",
-  "Database (MySQL/MongoDB)",
-  "Responsive Design",
+const skillCategories = [
+  {
+    title: "Languages & Frameworks",
+    icon: Code,
+    skills: ["C", "HTML", "CSS", "JavaScript", "Java", "ASP.NET", "C#", "Kotlin", "PHP", "React.js", "Node.js", "Arduino", "Python", "Laravel", "SQL"]
+  },
+  {
+    title: "Tools, Platforms & Hosting",
+    icon: Wrench,
+    skills: ["Visual Studio", "Figma", "Android Studio", "Postman", "VS Code", "Vercel", "GitHub", "GoDaddy", "Azure", "Firebase", "Docker"]
+  },
+  {
+    title: "Database & Local Environment",
+    icon: Database,
+    skills: ["MongoDB", "MySQL", "phpMyAdmin", "Laragon"]
+  },
+  {
+    title: "AI Tools",
+    icon: Brain,
+    skills: ["ChatGPT", "Vercel v0", "Claude", "DeepSeek"]
+  }
 ]
 
 export function AboutSection() {
@@ -50,7 +62,7 @@ export function AboutSection() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Bio */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -93,7 +105,7 @@ export function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - Stats & Highlights */}
+          {/* Right Column - Stats & Skills */}
           <div className="space-y-8">
             {/* Stats Cards */}
             <motion.div
@@ -118,27 +130,34 @@ export function AboutSection() {
               ))}
             </motion.div>
 
-            {/* Highlights Grid */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <h3 className="text-lg font-semibold mb-4">Core Competencies</h3>
-              <div className="flex flex-wrap gap-3">
-                {highlights.map((highlight, index) => (
-                  <motion.span
-                    key={highlight}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.3, delay: 0.7 + index * 0.05 }}
-                    className="px-4 py-2 rounded-full bg-secondary/80 text-secondary-foreground text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                  >
-                    {highlight}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
+            {/* Skills Sections */}
+            {skillCategories.map((category, catIndex) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.6 + catIndex * 0.15 }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <category.icon className="w-5 h-5 text-primary" />
+                  <h3 className="text-md font-semibold">{category.title}</h3>
+                  <span className="text-xs text-muted-foreground ml-auto">({category.skills.length})</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.2, delay: 0.7 + catIndex * 0.15 + skillIndex * 0.01 }}
+                      className="px-3 py-1.5 rounded-lg bg-secondary/60 text-secondary-foreground text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
