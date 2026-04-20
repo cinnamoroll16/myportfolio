@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card"
 
 const stats = [
   { icon: GraduationCap, label: "Education", value: "BSIT 2026", sublabel: "UC Banilad" },
+  { icon: Building2, label: "Internship", value: "Frontend Developer", sublabel: "Primary Structures Corporation (1 Semester)" },
   { icon: Briefcase, label: "Experience", value: "4+ Years", sublabel: "Working Scholar" },
   { icon: Award, label: "Achievement", value: "Dean's Lister", sublabel: "1st-2nd Year" },
 ]
@@ -72,8 +73,7 @@ export function AboutSection() {
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
               I&apos;m a motivated and adaptable IT student at University of Cebu - Banilad, graduating in May 2026. 
-              With hands-on experience in frontend development, UX/UI design, and IoT systems, I bring a unique 
-              blend of technical skills and creative problem-solving to every project.
+              I specialize in frontend development and UI/UX design, with working knowledge of backend systems and applied experience in IoT projects such as ReForest and ZoneAlert.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Currently interning as a Frontend Developer at Primary Group of Builders, where I design and 
@@ -81,9 +81,9 @@ export function AboutSection() {
               support while maintaining Dean&apos;s List status for two consecutive years.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I&apos;m Microsoft Azure Certified (AZ-900) and have completed CCNA: Introduction to Networks. 
-              I specialize in React.js, responsive design, and building user-centered applications that make 
-              a real impact.
+              I have completed CCNA: Introduction to Networks. 
+              I have strong expertise in UI/UX design (Figma, Canva) and frontend development (HTML, CSS, JavaScript, React.js). 
+              Capable of building responsive web applications, with working experience in PHP, IoT systems (ReForest, ZoneAlert), and AI-driven development workflows..
             </p>
 
             {/* Contact Info */}
