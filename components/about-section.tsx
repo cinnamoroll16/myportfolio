@@ -105,14 +105,13 @@ export function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - Stats & Skills */}
           <div className="space-y-8">
             {/* Stats Cards */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="grid grid-cols-3 gap-4"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -129,6 +128,7 @@ export function AboutSection() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
 
             {/* Skills Sections */}
             {skillCategories.map((category, catIndex) => (
