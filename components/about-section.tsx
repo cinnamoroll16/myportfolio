@@ -83,7 +83,7 @@ export function AboutSection() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               I have completed CCNA: Introduction to Networks. 
               I have strong expertise in UI/UX design (Figma, Canva) and frontend development (HTML, CSS, JavaScript, React.js). 
-              Capable of building responsive web applications, with working experience in PHP, IoT systems (ReForest, ZoneAlert), and AI-driven development workflows..
+              Capable of building responsive web applications, with working experience in PHP, IoT systems (ReForest, ZoneAlert), and AI-driven development workflows.
             </p>
 
             {/* Contact Info */}
@@ -105,6 +105,7 @@ export function AboutSection() {
             </div>
           </motion.div>
 
+          {/* Right Column - Stats & Skills */}
           <div className="space-y-8">
             {/* Stats Cards */}
             <motion.div
@@ -128,7 +129,6 @@ export function AboutSection() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
 
             {/* Skills Sections */}
             {skillCategories.map((category, catIndex) => (
